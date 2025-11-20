@@ -19,13 +19,43 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "30cc42e5-07d0-3d72-92f6-2132328f902c",
+        "id" : "19342623-5905-3deb-8c67-211f5c2e692e",
         "name" : "Funnel",
         "type" : "FUNNEL"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "103e4444-b01f-3505-8c88-cf642435483a",
+      "identifier" : "0f01c346-d2fe-3ccb-b1a6-7a4735fd6488",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Response" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c6e8b6d4-5160-31a1-b9d5-2dfa247c72dc",
+        "name" : "InvokeHTTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 13
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "98df09ca-1e69-37c9-8df5-b192ee3c3dbc",
+        "name" : "PublishMQTT",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8edcd40b-7860-31b0-ab83-ea0818f8e71e",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -40,7 +70,97 @@
         "name" : "JoltTransformJSON",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 6
+      "zIndex" : 10
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e2feba1b-fbb6-3024-a59a-8adb2b490522",
+        "name" : "ExecuteScript",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a04bd2ed-adc0-3003-99f9-af86ae12aa2e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "2cb86a21-ffda-337d-87b1-0b839667912d",
+        "name" : "JoltTransformJSON",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 11
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e5dbbcee-09fe-3373-935b-86df8660d01a",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a0e4b7c0-6254-303a-89a5-5506d52447d2",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e2feba1b-fbb6-3024-a59a-8adb2b490522",
+        "name" : "ExecuteScript",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 12
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "a5584e65-e194-3f72-9147-62b6f125d8f0",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "af121d01-9805-3db8-9c16-f947239fb7ac",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Message" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0cf3f9d3-0756-3215-ade8-443e0d60d2a5",
+        "name" : "ConsumeMQTT",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 9
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -397,10 +517,26 @@
     "funnels" : [ {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "30cc42e5-07d0-3d72-92f6-2132328f902c",
+      "identifier" : "19342623-5905-3deb-8c67-211f5c2e692e",
       "position" : {
-        "x" : 24.0,
-        "y" : 32.0
+        "x" : -992.0,
+        "y" : -184.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a5584e65-e194-3f72-9147-62b6f125d8f0",
+      "position" : {
+        "x" : -240.0,
+        "y" : 72.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e5dbbcee-09fe-3373-935b-86df8660d01a",
+      "position" : {
+        "x" : 296.0,
+        "y" : -184.0
       }
     } ],
     "identifier" : "flow-contents-group",
@@ -409,12 +545,214 @@
     "maxConcurrentTasks" : 1,
     "name" : "Datos placeholder",
     "outputPorts" : [ ],
+    "parameterContextName" : "API KEYS",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
     },
     "processGroups" : [ ],
     "processors" : [ {
+      "autoTerminatedRelationships" : [ "parse.failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mqtt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.6.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "0cf3f9d3-0756-3215-ade8-443e0d60d2a5",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ConsumeMQTT",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -1024.0,
+        "y" : -8.0
+      },
+      "properties" : {
+        "Max Queue Size" : "1000",
+        "Last Will QoS Level" : "0",
+        "Connection Timeout (seconds)" : "30",
+        "Broker URI" : "tcp://broker.emqx.io:1883",
+        "add-attributes-as-fields" : "true",
+        "Session state" : "true",
+        "Session Expiry Interval" : "24 hrs",
+        "Quality of Service(QoS)" : "0",
+        "Topic Filter" : "tecnonifi/#",
+        "MQTT Specification Version" : "0",
+        "Keep Alive Interval (seconds)" : "60",
+        "Last Will Retain" : "false"
+      },
+      "propertyDescriptors" : {
+        "Max Queue Size" : {
+          "displayName" : "Max Queue Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Queue Size",
+          "sensitive" : false
+        },
+        "Client ID" : {
+          "displayName" : "Client ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Client ID",
+          "sensitive" : false
+        },
+        "Last Will QoS Level" : {
+          "displayName" : "Last Will QoS Level",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will QoS Level",
+          "sensitive" : false
+        },
+        "Connection Timeout (seconds)" : {
+          "displayName" : "Connection Timeout (seconds)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout (seconds)",
+          "sensitive" : false
+        },
+        "record-writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "record-writer",
+          "sensitive" : false
+        },
+        "Broker URI" : {
+          "displayName" : "Broker URI",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Broker URI",
+          "sensitive" : false
+        },
+        "add-attributes-as-fields" : {
+          "displayName" : "Add attributes as fields",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "add-attributes-as-fields",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Username" : {
+          "displayName" : "Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Username",
+          "sensitive" : false
+        },
+        "Session state" : {
+          "displayName" : "Session state",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Session state",
+          "sensitive" : false
+        },
+        "Session Expiry Interval" : {
+          "displayName" : "Session Expiry Interval",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Session Expiry Interval",
+          "sensitive" : false
+        },
+        "Quality of Service(QoS)" : {
+          "displayName" : "Quality of Service (QoS)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Quality of Service(QoS)",
+          "sensitive" : false
+        },
+        "Last Will Message" : {
+          "displayName" : "Last Will Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will Message",
+          "sensitive" : false
+        },
+        "Last Will Topic" : {
+          "displayName" : "Last Will Topic",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will Topic",
+          "sensitive" : false
+        },
+        "Topic Filter" : {
+          "displayName" : "Topic Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Topic Filter",
+          "sensitive" : false
+        },
+        "record-reader" : {
+          "displayName" : "Record Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "record-reader",
+          "sensitive" : false
+        },
+        "Group ID" : {
+          "displayName" : "Group ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Group ID",
+          "sensitive" : false
+        },
+        "message-demarcator" : {
+          "displayName" : "Message Demarcator",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "message-demarcator",
+          "sensitive" : false
+        },
+        "MQTT Specification Version" : {
+          "displayName" : "MQTT Specification Version",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "MQTT Specification Version",
+          "sensitive" : false
+        },
+        "Keep Alive Interval (seconds)" : {
+          "displayName" : "Keep Alive Interval (seconds)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Keep Alive Interval (seconds)",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        },
+        "Last Will Retain" : {
+          "displayName" : "Last Will Retain",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will Retain",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.mqtt.ConsumeMQTT",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -433,8 +771,8 @@
       "name" : "JoltTransformJSON",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -136.0,
-        "y" : -488.0
+        "x" : -344.0,
+        "y" : -480.0
       },
       "properties" : {
         "JSON Source" : "FLOW_FILE",
@@ -527,6 +865,192 @@
       "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ "failure", "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mqtt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.6.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "98df09ca-1e69-37c9-8df5-b192ee3c3dbc",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PublishMQTT",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 328.0,
+        "y" : -488.0
+      },
+      "properties" : {
+        "Last Will QoS Level" : "0",
+        "Connection Timeout (seconds)" : "30",
+        "Broker URI" : "tcp://broker.emqx.io:1883",
+        "Session state" : "true",
+        "Session Expiry Interval" : "24 hrs",
+        "Quality of Service(QoS)" : "1",
+        "Topic" : "tecnonifi",
+        "MQTT Specification Version" : "0",
+        "Keep Alive Interval (seconds)" : "60",
+        "Retain Message" : "false",
+        "Last Will Retain" : "false"
+      },
+      "propertyDescriptors" : {
+        "Client ID" : {
+          "displayName" : "Client ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Client ID",
+          "sensitive" : false
+        },
+        "Last Will QoS Level" : {
+          "displayName" : "Last Will QoS Level",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will QoS Level",
+          "sensitive" : false
+        },
+        "Connection Timeout (seconds)" : {
+          "displayName" : "Connection Timeout (seconds)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout (seconds)",
+          "sensitive" : false
+        },
+        "record-writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "record-writer",
+          "sensitive" : false
+        },
+        "Broker URI" : {
+          "displayName" : "Broker URI",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Broker URI",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Username" : {
+          "displayName" : "Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Username",
+          "sensitive" : false
+        },
+        "Session state" : {
+          "displayName" : "Session state",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Session state",
+          "sensitive" : false
+        },
+        "Session Expiry Interval" : {
+          "displayName" : "Session Expiry Interval",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Session Expiry Interval",
+          "sensitive" : false
+        },
+        "Quality of Service(QoS)" : {
+          "displayName" : "Quality of Service (QoS)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Quality of Service(QoS)",
+          "sensitive" : false
+        },
+        "Last Will Message" : {
+          "displayName" : "Last Will Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will Message",
+          "sensitive" : false
+        },
+        "Last Will Topic" : {
+          "displayName" : "Last Will Topic",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will Topic",
+          "sensitive" : false
+        },
+        "record-reader" : {
+          "displayName" : "Record Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "record-reader",
+          "sensitive" : false
+        },
+        "message-demarcator" : {
+          "displayName" : "Message Demarcator",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "message-demarcator",
+          "sensitive" : false
+        },
+        "Topic" : {
+          "displayName" : "Topic",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Topic",
+          "sensitive" : false
+        },
+        "MQTT Specification Version" : {
+          "displayName" : "MQTT Specification Version",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "MQTT Specification Version",
+          "sensitive" : false
+        },
+        "Keep Alive Interval (seconds)" : {
+          "displayName" : "Keep Alive Interval (seconds)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Keep Alive Interval (seconds)",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        },
+        "Retain Message" : {
+          "displayName" : "Retain Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Retain Message",
+          "sensitive" : false
+        },
+        "Last Will Retain" : {
+          "displayName" : "Last Will Retain",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Will Retain",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.mqtt.PublishMQTT",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -545,8 +1069,8 @@
       "name" : "InvokeHTTP",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1120.0,
-        "y" : -488.0
+        "x" : -1136.0,
+        "y" : -480.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -632,6 +1156,13 @@
           "identifiesControllerService" : false,
           "name" : "Response Cookie Strategy",
           "sensitive" : false
+        },
+        "Authorization" : {
+          "displayName" : "Authorization",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "Authorization",
+          "sensitive" : true
         },
         "Request Password" : {
           "displayName" : "Request Password",
@@ -834,10 +1365,83 @@
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
+      "schedulingPeriod" : "2 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-scripting-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.6.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e2feba1b-fbb6-3024-a59a-8adb2b490522",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ExecuteScript",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -336.0,
+        "y" : -216.0
+      },
+      "properties" : {
+        "Script Engine" : "python",
+        "Script Body" : "# Importaciones necesarias para manejar el I/O y el JSON\nfrom org.apache.nifi.processor.io import InputStreamCallback, OutputStreamCallback\nfrom java.nio.charset import StandardCharsets\nfrom org.apache.commons.io import IOUtils\nimport json # Jython puede usar el módulo json de Python\n\n# Obtener el FlowFile de la sesión\nflowFile = session.get()\n\nif flowFile is not None:\n    # --- 1. LECTURA DEL FLOWFILE ---\n    class ReaderCallback(InputStreamCallback):\n        def __init__(self):\n            self.content = None\n        def process(self, inputStream):\n            # Leer el contenido del FlowFile como una cadena\n            self.content = IOUtils.toString(inputStream, StandardCharsets.UTF_8)\n            \n    reader = ReaderCallback()\n    session.read(flowFile, reader)\n    \n    try:\n        # Convertir la cadena de JSON a un objeto Python (una lista de diccionarios)\n        input_data = json.loads(reader.content)\n        log.info(\"JSON input loaded. Total records: \" + str(len(input_data)))\n\n        # --- 2. TRANSFORMACIÓN: FILTRADO ---\n        # Definir la letra de filtro (la letra 'g', minúscula para ser case-sensitive)\n        filter_char = 'G'\n        \n        # Filtrar la lista. Creamos una nueva lista solo con los elementos que cumplen la condición.\n        # Condición: filter_char DEBE estar en el campo 'name'.\n        filtered_data = [\n            item for item in input_data \n            if filter_char in item.get('name', '') # Usamos .get('name', '') para evitar errores si no existe 'name'\n        ]\n\n        log.info(\"Filtering complete. Records matching '\" + filter_char + \"': \" + str(len(filtered_data)))\n        \n        # Convertir la lista filtrada de vuelta a una cadena JSON\n        # Usamos indent=2 para que el JSON de salida sea legible\n        output_data = json.dumps(filtered_data, indent=2)\n        \n        # --- 3. ESCRITURA AL FLOWFILE ---\n        class WriterCallback(OutputStreamCallback):\n            def __init__(self, data_to_write):\n                # Codificar la cadena de salida a bytes UTF-8 para la escritura\n                self.data_to_write = data_to_write.encode('utf-8')\n\n            def process(self, outputStream):\n                outputStream.write(self.data_to_write)\n                \n        # Escribir el nuevo JSON filtrado de vuelta al FlowFile\n        flowFile = session.write(flowFile, WriterCallback(output_data))\n\n        # Opcional: Actualizar el atributo mime.type a application/json\n        flowFile = session.putAttribute(flowFile, \"mime.type\", \"application/json\")\n        \n        # Transferir el FlowFile a la relación de éxito\n        session.transfer(flowFile, REL_SUCCESS)\n        \n    except Exception as e:\n        # Si ocurre un error (p.ej., el JSON es inválido), loguear el error y transferir a Fallo\n        log.error(\"Failed to process FlowFile due to error: \" + str(e), e)\n        session.transfer(flowFile, REL_FAILURE)\n        \nelse:\n    # Si no hay FlowFile, simplemente retornar\n    pass"
+      },
+      "propertyDescriptors" : {
+        "Script File" : {
+          "displayName" : "Script File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Script File",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Script Engine" : {
+          "displayName" : "Script Engine",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Script Engine",
+          "sensitive" : false
+        },
+        "Script Body" : {
+          "displayName" : "Script Body",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Script Body",
+          "sensitive" : false
+        },
+        "Module Directory" : {
+          "displayName" : "Module Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Module Directory",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "DIRECTORY", "FILE" ]
+          },
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.script.ExecuteScript",
       "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
@@ -846,11 +1450,24 @@
   },
   "flowEncodingVersion" : "1.0",
   "latest" : false,
-  "parameterContexts" : { },
+  "parameterContexts" : {
+    "API KEYS" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "description" : "",
+      "inheritedParameterContexts" : [ ],
+      "name" : "API KEYS",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "TOKEN",
+        "provided" : false,
+        "sensitive" : true
+      } ]
+    }
+  },
   "parameterProviders" : { },
   "snapshotMetadata" : {
     "author" : "carlos.ramirez@tecnoandina.cl",
     "flowIdentifier" : "Flow-one",
-    "timestamp" : 1763652024849
+    "timestamp" : 1763666593422
   }
 }
