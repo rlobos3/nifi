@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1763599421395,
+    "description" : "Se consulta una api cualquiera",
+    "identifier" : "Flow-one",
+    "lastModifiedTimestamp" : 1763599421395,
+    "name" : "Flow one",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
