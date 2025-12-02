@@ -76,7 +76,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "d5bfa3df-019a-1000-0741-a7d7e27a2e8c",
-        "name" : "InvokeHTTP",
+        "name" : "Get endpoint data",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -122,7 +122,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "d5bfa3df-019a-1000-0741-a7d7e27a2e8c",
-        "name" : "InvokeHTTP",
+        "name" : "Get endpoint data",
         "type" : "PROCESSOR"
       },
       "zIndex" : 29
@@ -312,7 +312,7 @@
           "comments" : "",
           "groupId" : "a38cd3e7-c01a-3b13-a304-5c88e4cd83fe",
           "id" : "d259fe69-019a-1000-b559-94be1945dea6",
-          "name" : "EvaluateJsonPath",
+          "name" : "Extract token to attribute",
           "type" : "PROCESSOR"
         },
         "zIndex" : 2
@@ -325,7 +325,7 @@
           "comments" : "",
           "groupId" : "a38cd3e7-c01a-3b13-a304-5c88e4cd83fe",
           "id" : "d259fe69-019a-1000-b559-94be1945dea6",
-          "name" : "EvaluateJsonPath",
+          "name" : "Extract token to attribute",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -342,7 +342,7 @@
           "comments" : "",
           "groupId" : "a38cd3e7-c01a-3b13-a304-5c88e4cd83fe",
           "id" : "d259fe68-019a-1000-3881-35db66d6f693",
-          "name" : "GET TOKEN",
+          "name" : "GET JWT TOKEN",
           "type" : "PROCESSOR"
         },
         "zIndex" : 1
@@ -370,8 +370,8 @@
         "name" : "Token",
         "portFunction" : "FAILURE",
         "position" : {
-          "x" : -160.0,
-          "y" : -96.0
+          "x" : 520.0,
+          "y" : -400.0
         },
         "scheduledState" : "ENABLED",
         "type" : "OUTPUT_PORT"
@@ -398,11 +398,11 @@
         "groupIdentifier" : "a38cd3e7-c01a-3b13-a304-5c88e4cd83fe",
         "identifier" : "d259fe68-019a-1000-3881-35db66d6f693",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "GET TOKEN",
+        "name" : "GET JWT TOKEN",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -976.0,
-          "y" : -440.0
+          "y" : -424.0
         },
         "properties" : {
           "Script Engine" : "python",
@@ -495,7 +495,7 @@
         "groupIdentifier" : "a38cd3e7-c01a-3b13-a304-5c88e4cd83fe",
         "identifier" : "d259fe69-019a-1000-b559-94be1945dea6",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "EvaluateJsonPath",
+        "name" : "Extract token to attribute",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -208.0,
@@ -578,7 +578,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3271-019a-1000-778c-b4fafbd2d058",
-          "name" : "ReplaceText",
+          "name" : "Replace {farmId} segment",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -595,7 +595,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3274-019a-1000-16ea-d9304caf4327",
-          "name" : "ReplaceText",
+          "name" : "Replace {customerId} segment",
           "type" : "PROCESSOR"
         },
         "zIndex" : 4
@@ -608,7 +608,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3274-019a-1000-16ea-d9304caf4327",
-          "name" : "ReplaceText",
+          "name" : "Replace {customerId} segment",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -625,7 +625,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3272-019a-1000-1ada-8c46d6e8d5da",
-          "name" : "SplitJson",
+          "name" : "Create one flow file per endpoint",
           "type" : "PROCESSOR"
         },
         "zIndex" : 3
@@ -638,7 +638,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3273-019a-1000-18f5-00a6036e327a",
-          "name" : "ExtractText",
+          "name" : "Put endpoint in {endpoint} attribute",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -655,7 +655,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3271-019a-1000-778c-b4fafbd2d058",
-          "name" : "ReplaceText",
+          "name" : "Replace {farmId} segment",
           "type" : "PROCESSOR"
         },
         "zIndex" : 5
@@ -668,7 +668,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3270-019a-1000-0306-f5894d486974",
-          "name" : "ReplaceText",
+          "name" : "Generate flow file with endpoints list",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -713,7 +713,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3273-019a-1000-18f5-00a6036e327a",
-          "name" : "ExtractText",
+          "name" : "Put endpoint in {endpoint} attribute",
           "type" : "PROCESSOR"
         },
         "zIndex" : 6
@@ -726,7 +726,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3272-019a-1000-1ada-8c46d6e8d5da",
-          "name" : "SplitJson",
+          "name" : "Create one flow file per endpoint",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -743,7 +743,7 @@
           "comments" : "",
           "groupId" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
           "id" : "d5be3270-019a-1000-0306-f5894d486974",
-          "name" : "ReplaceText",
+          "name" : "Generate flow file with endpoints list",
           "type" : "PROCESSOR"
         },
         "zIndex" : 2
@@ -813,7 +813,7 @@
         "groupIdentifier" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
         "identifier" : "d5be3270-019a-1000-0306-f5894d486974",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "ReplaceText",
+        "name" : "Generate flow file with endpoints list",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -888.0,
@@ -918,7 +918,7 @@
         "groupIdentifier" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
         "identifier" : "d5be3271-019a-1000-778c-b4fafbd2d058",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "ReplaceText",
+        "name" : "Replace {farmId} segment",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -123.99983637280093,
@@ -1023,7 +1023,7 @@
         "groupIdentifier" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
         "identifier" : "d5be3272-019a-1000-1ada-8c46d6e8d5da",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "SplitJson",
+        "name" : "Create one flow file per endpoint",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -131.99983637280093,
@@ -1082,7 +1082,7 @@
         "groupIdentifier" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
         "identifier" : "d5be3273-019a-1000-18f5-00a6036e327a",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "ExtractText",
+        "name" : "Put endpoint in {endpoint} attribute",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -115.99983637280093,
@@ -1245,7 +1245,7 @@
         "groupIdentifier" : "a980b7d3-9e3c-300f-91a1-f76f87e14ddf",
         "identifier" : "d5be3274-019a-1000-16ea-d9304caf4327",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "ReplaceText",
+        "name" : "Replace {customerId} segment",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -123.99983637280093,
@@ -1350,7 +1350,7 @@
           "comments" : "",
           "groupId" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
           "id" : "d594a087-019a-1000-dc2c-b5da200eb351",
-          "name" : "SplitJson",
+          "name" : "Create one flow file per farm",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -1367,7 +1367,7 @@
           "comments" : "",
           "groupId" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
           "id" : "d594a086-019a-1000-8ad5-8eb49d5fb61a",
-          "name" : "FARMS",
+          "name" : "GET FARMS LIST",
           "type" : "PROCESSOR"
         },
         "zIndex" : 1
@@ -1396,7 +1396,7 @@
           "comments" : "",
           "groupId" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
           "id" : "d594a085-019a-1000-348b-aef4661c3017",
-          "name" : "ExtractText",
+          "name" : "Put farm id in {farm_name} attribute",
           "type" : "PROCESSOR"
         },
         "zIndex" : 4
@@ -1409,7 +1409,7 @@
           "comments" : "",
           "groupId" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
           "id" : "d594a086-019a-1000-8ad5-8eb49d5fb61a",
-          "name" : "FARMS",
+          "name" : "GET FARMS LIST",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -1438,7 +1438,7 @@
           "comments" : "",
           "groupId" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
           "id" : "d594a085-019a-1000-348b-aef4661c3017",
-          "name" : "ExtractText",
+          "name" : "Put farm id in {farm_name} attribute",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -1455,7 +1455,7 @@
           "comments" : "",
           "groupId" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
           "id" : "d594a087-019a-1000-dc2c-b5da200eb351",
-          "name" : "SplitJson",
+          "name" : "Create one flow file per farm",
           "type" : "PROCESSOR"
         },
         "zIndex" : 2
@@ -1479,7 +1479,7 @@
         "name" : "INPUT",
         "portFunction" : "STANDARD",
         "position" : {
-          "x" : -784.0,
+          "x" : -776.0,
           "y" : -336.0
         },
         "scheduledState" : "ENABLED",
@@ -1497,8 +1497,8 @@
         "name" : "OUTPUT",
         "portFunction" : "STANDARD",
         "position" : {
-          "x" : 600.0,
-          "y" : 280.0
+          "x" : -776.0,
+          "y" : 664.0
         },
         "scheduledState" : "ENABLED",
         "type" : "OUTPUT_PORT"
@@ -1506,7 +1506,7 @@
       "parameterContextName" : "PIGKNOWS_KEYS",
       "position" : {
         "x" : -1464.0,
-        "y" : -784.0
+        "y" : -776.0
       },
       "processGroups" : [ ],
       "processors" : [ {
@@ -1525,11 +1525,11 @@
         "groupIdentifier" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
         "identifier" : "d594a085-019a-1000-348b-aef4661c3017",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "ExtractText",
+        "name" : "Put farm id in {farm_name} attribute",
         "penaltyDuration" : "30 sec",
         "position" : {
-          "x" : -175.99932599017848,
-          "y" : 235.84035634996053
+          "x" : -832.0,
+          "y" : 400.0
         },
         "properties" : {
           "Enable Unicode Predefined Character Classes" : "false",
@@ -1688,11 +1688,11 @@
         "groupIdentifier" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
         "identifier" : "d594a086-019a-1000-8ad5-8eb49d5fb61a",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "FARMS",
+        "name" : "GET FARMS LIST",
         "penaltyDuration" : "30 sec",
         "position" : {
-          "x" : -175.99932599017848,
-          "y" : -364.15964365003947
+          "x" : -832.0,
+          "y" : -168.0
         },
         "properties" : {
           "Request Content-Encoding" : "DISABLED",
@@ -2009,11 +2009,11 @@
         "groupIdentifier" : "bbae46a7-de7f-327e-a714-c061ddd2c6fb",
         "identifier" : "d594a087-019a-1000-dc2c-b5da200eb351",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "SplitJson",
+        "name" : "Create one flow file per farm",
         "penaltyDuration" : "30 sec",
         "position" : {
-          "x" : -175.99932599017848,
-          "y" : -68.15964365003947
+          "x" : -832.0,
+          "y" : 128.0
         },
         "properties" : {
           "Max String Length" : "20 MB",
@@ -2073,7 +2073,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "d5bfa3df-019a-1000-0741-a7d7e27a2e8c",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "InvokeHTTP",
+      "name" : "Get endpoint data",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -1456.0,
@@ -2420,6 +2420,6 @@
   "snapshotMetadata" : {
     "author" : "carlos.ramirez@tecnoandina.cl",
     "flowIdentifier" : "Pigknows",
-    "timestamp" : 1764682747002
+    "timestamp" : 1764684972872
   }
 }
