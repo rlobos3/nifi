@@ -113,6 +113,66 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "e2a16e98-1507-335e-a539-c820c47dca04",
+        "name" : "ExecuteScript",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1e6f3da3-d216-3870-bb55-cd5c839dd400",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "joined" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b18d3fbe-a713-30de-9eb9-8a681ae47ac9",
+        "name" : "JoinEnrichment",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 47
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "2e948ef1-9fed-30bf-b451-6ada0821af47",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "49fcbb30-2021-32ce-999e-b2ce49db6db0",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e2a16e98-1507-335e-a539-c820c47dca04",
+        "name" : "ExecuteScript",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 49
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "66963edc-cd13-341f-86f4-b631c6c440e9",
         "name" : "Funnel",
         "type" : "FUNNEL"
@@ -165,6 +225,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 44
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "882b1990-9c63-3f05-b8c9-39f869c23145",
+        "name" : "PushToRedisDemo",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7bfc5dab-6905-3965-9e0d-40a2cd958925",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e2a16e98-1507-335e-a539-c820c47dca04",
+        "name" : "ExecuteScript",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 50
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -371,6 +461,36 @@
         "type" : "OUTPUT_PORT"
       },
       "zIndex" : 35
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8d87f7b8-800d-3b0d-9af1-8a908f00b76e",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f8fd75b1-32d1-3b5b-a1cd-bae9ef9895a4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e2a16e98-1507-335e-a539-c820c47dca04",
+        "name" : "ExecuteScript",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 48
     } ],
     "controllerServices" : [ {
       "bulletinLevel" : "WARN",
@@ -556,14 +676,14 @@
           "group" : "org.apache.nifi",
           "version" : "2.6.0"
         },
-        "type" : "org.apache.nifi.distributed.cache.client.DistributedMapCacheClient"
+        "type" : "org.apache.nifi.distributed.cache.client.AtomicDistributedMapCacheClient"
       }, {
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
           "version" : "2.6.0"
         },
-        "type" : "org.apache.nifi.distributed.cache.client.AtomicDistributedMapCacheClient"
+        "type" : "org.apache.nifi.distributed.cache.client.DistributedMapCacheClient"
       } ],
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "8c6dc719-08cf-33bc-983b-0d0d331beeab",
@@ -831,6 +951,14 @@
     "funnels" : [ {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2e948ef1-9fed-30bf-b451-6ada0821af47",
+      "position" : {
+        "x" : 248.0,
+        "y" : 968.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
       "identifier" : "65a04831-20e8-3b2d-a0f0-d3c611f72817",
       "position" : {
         "x" : -688.0,
@@ -843,6 +971,14 @@
       "position" : {
         "x" : -528.0,
         "y" : -464.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8d87f7b8-800d-3b0d-9af1-8a908f00b76e",
+      "position" : {
+        "x" : -304.0,
+        "y" : 1192.0
       }
     }, {
       "componentType" : "FUNNEL",
@@ -2773,6 +2909,80 @@
       "type" : "org.apache.nifi.processors.graph.ExecuteGraphQuery",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ "failure", "original", "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "python-extensions",
+        "group" : "org.apache.nifi",
+        "version" : "0.0.7"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "882b1990-9c63-3f05-b8c9-39f869c23145",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PushToRedisDemo",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -96.0,
+        "y" : 1312.0
+      },
+      "properties" : {
+        "Redis Host" : "172.17.0.3",
+        "Redis Port" : "6379",
+        "Stream Key" : "nifi:stream:breeding",
+        "Database Index" : "0"
+      },
+      "propertyDescriptors" : {
+        "Redis Host" : {
+          "displayName" : "Redis Host",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Redis Host",
+          "sensitive" : false
+        },
+        "Redis Port" : {
+          "displayName" : "Redis Port",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Redis Port",
+          "sensitive" : false
+        },
+        "Stream Key" : {
+          "displayName" : "Stream Key",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stream Key",
+          "sensitive" : false
+        },
+        "Redis Password" : {
+          "displayName" : "Redis Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Redis Password",
+          "sensitive" : true
+        },
+        "Database Index" : {
+          "displayName" : "Database Index",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Index",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "PushToRedisDemo",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -3259,6 +3469,79 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
       "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-scripting-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.6.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e2a16e98-1507-335e-a539-c820c47dca04",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ExecuteScript",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -456.0,
+        "y" : 920.0
+      },
+      "properties" : {
+        "Script Engine" : "python",
+        "Script Body" : "import json\nfrom org.apache.commons.io import IOUtils\nfrom java.nio.charset import StandardCharsets\nfrom org.apache.nifi.processor.io import StreamCallback\nfrom java.time import Instant\n\nclass TransformCallback(StreamCallback):\n    def __init__(self):\n        pass\n\n    def process(self, inputStream, outputStream):\n        text = IOUtils.toString(inputStream, StandardCharsets.UTF_8)\n        \n        if not text:\n            return\n\n        try:\n            data = json.loads(text)\n        except ValueError:\n            raise ValueError(\"El input no es un JSON valido\")\n\n        output_data = []\n\n        # 1. Preparación: Obtener lista de entrada y Mapa Maestro\n        master_map = {}\n        input_list = []\n\n        if isinstance(data, list):\n            input_list = data\n            if len(data) > 0:\n                first_enrichment = data[0].get(\"enrichment\", {})\n                if first_enrichment:\n                    master_map = first_enrichment.get(\"s.endpointMap\", {})\n        elif isinstance(data, dict):\n            input_list = [data]\n            enrichment = data.get(\"enrichment\", {})\n            if enrichment:\n                master_map = enrichment.get(\"s.endpointMap\", {})\n\n        # --- FUNCIÓN DE BÚSQUEDA (Destino -> Origen) ---\n        def get_mapped_value(target_name_needed, current_map, original_record):\n            source_field_name = current_map.get(target_name_needed)\n            if source_field_name and source_field_name in original_record:\n                return original_record[source_field_name]\n            return None\n\n        # --- FUNCIÓN CONVERSIÓN A EPOCH ---\n        def get_epoch_from_iso(iso_date_str):\n            if not iso_date_str:\n                return None\n            try:\n                return Instant.parse(str(iso_date_str)).toEpochMilli()\n            except Exception:\n                return iso_date_str\n\n        # 2. Lógica de Casos Específicos\n        for record in input_list:\n            if not isinstance(record, dict):\n                continue\n                \n            original = record.get(\"original\", {})\n            event_name = original.get(\"eventname\")\n            reason = original.get(\"reason\") # Obtenemos la razon para comparar\n\n            # Timestamp convertido\n            raw_timestamp = get_mapped_value(\"timestamp\", master_map, original)\n            epoch_timestamp = get_epoch_from_iso(raw_timestamp)\n\n            # --- CASO 1: BEGIN GROUP ---\n            if event_name == \"BEGIN GROUP\":\n                row_structure = {\n                    \"data_type\": \"breeding\",\n                    \"idta\": \"1\",\n                    \"snta\": \"pending\",\n                    \"source\": \"msm-porcimarca\",\n                    \"timestamp\": epoch_timestamp,\n                    \"client\": \"porcimarca\",\n                    \"data\": {\n                        \"startDate\": None,\n                        \"initialWeightAvg\": None,\n                        \"age\": None,\n                        \"quantity\": None,\n                        \"sex\": None,\n                        \"breedingCode\": get_mapped_value(\"breedingCode\", master_map, original)\n                    }\n                }\n                output_data.append(row_structure)\n\n            # --- CASO 2: DEATH O SALES (distinto de MARKET) ---\n            # Se combinan ambos casos aquí.\n            elif event_name == \"DEATH\" or (event_name == \"SALES\" and reason != \"MARKET\"):\n                row_structure = {\n                    \"client\": \"porcimarca\",\n                    \"data\": { \n                        \"mortality_count\": get_mapped_value(\"mortality_count\", master_map, original), \n                        \"sex\": \"pending\", \n                        \"type\":  get_mapped_value(\"type\", master_map, original), \n                        \"type_id\": 0, \n                        \"breedingCode\": get_mapped_value(\"breedingCode\", master_map, original)\n                    },\n                    \"data_type\": \"mortality\",\n                    \"idta\": \"1\",\n                    \"snta\": \"pending\",\n                    \"source\": \"msm-porcimarca\",\n                    \"timestamp\": epoch_timestamp\n                }\n                output_data.append(row_structure)\n\n            # --- CASO 3: END GROUP ---\n            elif event_name == \"END GROUP\":\n                row_structure = {\n                    \"data_type\": \"breeding\",\n                    \"idta\": \"1\",\n                    \"snta\": \"pending\",\n                    \"source\": \"msm-porcimarca\",\n                    \"timestamp\": epoch_timestamp,\n                    \"client\": \"porcimarca\",\n                    \"data\": {\n                        \"startDate\": get_mapped_value(\"startDate\", master_map, original),\n                        \"initialWeightAvg\": 0,\n                        \"age\": 0,\n                        \"quantity\": 0,\n                        \"sex\": \"pending\",\n                        \"breedingCode\": get_mapped_value(\"breedingCode\", master_map, original),\n                        \"endDate\": get_mapped_value(\"endDate\", master_map, original),\n                        \"finalTotalQuantity\": 0,\n                        \"finalWeightAvg\": 0,\n                        \"finalAge\": 0\n                    }\n                }\n                output_data.append(row_structure)\n\n            # --- CASO 4: PURCHASE ---\n            elif event_name == \"PURCHASE\":\n                row_structure = {\n                    \"data_type\": \"breeding\",\n                    \"idta\": \"1\",\n                    \"snta\": \"pending\",\n                    \"source\": \"msm-porcimarca\",\n                    \"timestamp\": epoch_timestamp,\n                    \"client\": \"porcimarca\",\n                    \"data\": {\n                        \"startDate\": get_mapped_value(\"startDate\", master_map, original),\n                        \"initialWeightAvg\": get_mapped_value(\"initialWeightAvg\", master_map, original),\n                        \"age\": get_mapped_value(\"age\", master_map, original),\n                        \"quantity\": get_mapped_value(\"quantity\", master_map, original),\n                        \"sex\": \"pending\",\n                        \"breedingCode\": get_mapped_value(\"breedingCode\", master_map, original)\n                    }\n                }\n                output_data.append(row_structure)\n\n        # 3. Escribir resultado\n        outputStream.write(json.dumps(output_data).encode('utf-8'))\n\n# --- Bloque de Ejecución Principal ---\nflowFile = session.get()\n\nif flowFile:\n    try:\n        flowFile = session.write(flowFile, TransformCallback())\n        session.transfer(flowFile, REL_SUCCESS)\n    except Exception as e:\n        log.error(\"Error en script de transformacion: \" + str(e))\n        session.transfer(flowFile, REL_FAILURE)"
+      },
+      "propertyDescriptors" : {
+        "Script File" : {
+          "displayName" : "Script File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Script File",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Script Engine" : {
+          "displayName" : "Script Engine",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Script Engine",
+          "sensitive" : false
+        },
+        "Script Body" : {
+          "displayName" : "Script Body",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Script Body",
+          "sensitive" : false
+        },
+        "Module Directory" : {
+          "displayName" : "Module Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Module Directory",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "DIRECTORY", "FILE" ]
+          },
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.script.ExecuteScript",
+      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
@@ -3301,6 +3584,6 @@
   "snapshotMetadata" : {
     "author" : "carlos.ramirez@tecnoandina.cl",
     "flowIdentifier" : "pigknows",
-    "timestamp" : 1765824326283
+    "timestamp" : 1767072694587
   }
 }
